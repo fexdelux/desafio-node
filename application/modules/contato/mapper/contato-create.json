@@ -1,0 +1,9 @@
+/**
+Informações para criação do contato
+*/
+{
+  "nome" :"",
+  "canal" :"",
+  "valor" :"",
+  "obs" :""
+}

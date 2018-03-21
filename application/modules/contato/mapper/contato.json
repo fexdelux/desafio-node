@@ -1,0 +1,10 @@
+/**
+Informações do contato
+*/
+{
+  "id" :"",
+  "nome" :"",
+  "canal" :"",
+  "valor" :"",
+  "obs" :""
+}

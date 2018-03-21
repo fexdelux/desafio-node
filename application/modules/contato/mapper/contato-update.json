@@ -1,0 +1,9 @@
+/**
+Informações para atualização do contato
+*/
+{
+  "nome" :"",
+  "canal" :"",
+  "valor" :"",
+  "obs" :""
+}
