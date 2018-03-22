@@ -1,0 +1,32 @@
+{
+  "name": "desafio-meta-nodejs",
+  "version": "1.0.0",
+  "description": "Desafio para processo seletivo Meta",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "config": "npm install && node install.js",
+    "dev": "nodemon app.js",
+    "test": "mocha tests/**/**.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fexdelux@bitbucket.org/fexdelux/desafio-meta.git"
+  },
+  "author": "Fernando Henrique Souza",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/fexdelux/desafio-meta#readme",
+  "dependencies": {
+    "consign": "^0.1.6",
+    "inquirer": "^5.1.0",
+    "password-generator": "^2.2.0",
+    "restify": "^7.0.0",
+    "restify-cors-middleware": "^1.1.0",
+    "sequelize": "^4.37.3",
+    "sqlite3": "^4.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4"
+  }
+}

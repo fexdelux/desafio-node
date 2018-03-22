@@ -1,0 +1,8 @@
+
+{
+  "id" :{"type": "string"},
+  "nome" :{"type": "string"},
+  "canal" :{"type": "string"},
+  "valor" :{"type": "string"},
+  "obs" :{"type": "string"}
+}
