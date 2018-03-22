@@ -1,9 +1,7 @@
-/**
-Informações para criação do contato
-*/
+
 {
-  "nome" :"",
-  "canal" :"",
-  "valor" :"",
-  "obs" :""
+  "nome" :{"type": "string","required": true},
+  "canal" :{"type": "string","required": true},
+  "valor" :{"type": "string","required": true},
+  "obs" :{"type": "string","required": false}
 }

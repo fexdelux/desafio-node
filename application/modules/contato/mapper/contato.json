@@ -1,10 +1,8 @@
-/**
-Informações do contato
-*/
+
 {
-  "id" :"",
-  "nome" :"",
-  "canal" :"",
-  "valor" :"",
-  "obs" :""
+  "id" :{"type": "string"},
+  "nome" :{"type": "string"},
+  "canal" :{"type": "string"},
+  "valor" :{"type": "string"},
+  "obs" :{"type": "string"}
 }

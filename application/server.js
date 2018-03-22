@@ -4,6 +4,7 @@ const consign = require('consign');
 global.__dirmodules = `${__dirname}/modules`;
 global.__dirconfig = `${__dirname}/../config`;
 global.__dircore = `${__dirname}/core`;
+global.__serverLog = require(`${__dircore}/serverlog`);
 
 const config = require(`${__dirconfig}/system`);
 const corsOptions = {
@@ -32,9 +33,6 @@ consign({cwd: 'application', locale: 'pt-br', extensions: [ '.js' ]})
 	.include('routers')
 	.into(server);
 
-server.on('restifyError', function(req, res, err, callback) {
-    res.status(500).json({status: err, message:'error'});
-    return callback();
-});
+
 
 module.exports = server;

@@ -1,24 +1,66 @@
-/**
-Classe modelo para contato
-*/
+/***************************************
+  Model File
+  Description:
+
+*****************************************/
 const connection = require(`${__dircore}/connection`);
 const ContatoEntity = connection.import(`${__dirmodules}/contato/entity/contato`);
 class ContatoModel{
 
   constructor(){
+    ContatoEntity.sync();
+  }
+    get(id){
+      return new Promise ((resolve,reject) => {
+        ContatoEntity.findById(id).then( contato => {
+          resolve(contato);
+        }).catch( err => {
+          serverLog.error('Recuperando informação',err);
+          reject(err);
+        })
+      });
+    }
+    getList(page, size){
+      size = size || 10;
+      page = page || 1;
 
-  }
-  validate(){
-    if(this.nome === ''){
-      //throw new DesafioException(400,'O id nome pode esta vazio');
+      return new Promise ((resolve,reject) => {
+        ContatoEntity.findAndCountAll().then( result => {
+          let pageSize = Math.ceil(result.count / size);
+          let offset = size * (page - 1);
+          ContatoEntity.findAll({
+            limit : size,
+            offset: offset
+          }).then( contatos => {
+            resolve({result:contatos,count:result.count, pages: pageSize});
+          }).catch( err => {
+            serverLog.error('Recuperando informação',err);
+            reject(err);
+          })
+        })
+      });
     }
-    if(this.canal === ''){
-      //throw new DesafioException(400,'O canal não pode esta vazio');
+    save(data){
+      return new Promise ((resolve,reject) => {
+        console.log(data);
+        ContatoEntity.upsert(data).then( contato => {
+          resolve(contato);
+        }).catch( err => {
+          serverLog.error('Gravando a informação',err);
+          reject(err);
+        })
+
+      });
     }
-    if(this.valor === ''){
-      //throw new DesafioException(400,'O valor do canal não pode esta vazio');
+    delete(id){
+      return new Promise ((resolve,reject) => {
+        ContatoEntity.delete(id).then( contato => {
+          resolve(contato);
+        }).catch( err => {
+          serverLog.error('Remoção da informação',err);
+          reject(err);
+        })
+      });
     }
-  }
 }
-
 module.exports = ContatoModel;

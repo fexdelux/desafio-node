@@ -1,11 +1,17 @@
 /**
  * Arquivo de exemplo para configurações do sistema
  */
-module.exports =  {
+module.exports = {
   service:{
-    port: 3100
+    host: 'localhost',
+    port: 3100,
+    production: false
+  },
+  security:{
+    pwdKey:'<pwdKey>',
+    tokenKey: '<tokenKey>'
   },
   database: {
-    path: "./database.sqlite",
+    path: "./database.sqlite"
   }
 }

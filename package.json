@@ -5,19 +5,21 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "install": "npm i && node install.js && npm start",
+    "config": "npm install && node install.js",
     "dev": "nodemon app.js",
     "test": "mocha tests/**/**.spec.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://fexdelux@bitbucket.org/fexdelux/meta-desafio-nodejs.git"
+    "url": "git+https://fexdelux@bitbucket.org/fexdelux/desafio-meta.git"
   },
   "author": "Fernando Henrique Souza",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/fexdelux/meta-desafio-nodejs#readme",
+  "homepage": "https://bitbucket.org/fexdelux/desafio-meta#readme",
   "dependencies": {
     "consign": "^0.1.6",
+    "inquirer": "^5.1.0",
+    "password-generator": "^2.2.0",
     "restify": "^7.0.0",
     "restify-cors-middleware": "^1.1.0",
     "sequelize": "^4.37.3",
